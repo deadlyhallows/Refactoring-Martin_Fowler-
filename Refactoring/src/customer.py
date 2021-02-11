@@ -9,10 +9,6 @@ class Customer:
     def add_rental(self, rental):
         self.__rentals.append(rental)
 
-    @staticmethod
-    def amount_for(rental):
-        return rental.get_charge()
-        
     def get_statement(self):
 
         totalAmount = 0
@@ -22,7 +18,7 @@ class Customer:
 
             if rental.get_days_rented() > 0:
 
-                thisAmount = self.amount_for(rental)
+                thisAmount = rental.get_charge()
 
                 # add frequent renter points
                 frequentRenterPoints += 1

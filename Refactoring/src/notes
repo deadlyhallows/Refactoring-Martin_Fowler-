@@ -21,6 +21,7 @@
    needed.
 
 4. Check if methods of all classes uses the data of the same class, and move the methods accordingly.
+   After this, change the references of old method.
 =======================================================================================================================
 
 * Pointers for OOP in Python
