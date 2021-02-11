@@ -16,6 +16,11 @@
     a. start with extracting logical part from the long method
     b. look for local variables, unchanged ones will be parameters to the extarcted method and the changing ones will
        be local variables which wil be returned.
+
+3. Rename the variables and functions in a way that it explains the purpose of the code, also add doc-strings wherever
+   needed.
+
+4. Check if methods of all classes uses the data of the same class, and move the methods accordingly.
 =======================================================================================================================
 
 * Pointers for OOP in Python

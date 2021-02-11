@@ -10,9 +10,9 @@ class Customer:
         self.__rentals.append(rental)
 
     @staticmethod
-    def amount_for(each):
-        price_code = each.get_movie().price_code
-        days_rented = each.get_days_rented()
+    def amount_for(rental):
+        price_code = rental.get_movie().price_code
+        days_rented = rental.get_days_rented()
         thisAmount = 0
         if price_code == Movie.REGULAR:
             thisAmount += 2
@@ -32,21 +32,21 @@ class Customer:
         totalAmount = 0
         frequentRenterPoints = 0
         result = f"Rental Record for {self.__name}\n"
-        for each in self.__rentals:
+        for rental in self.__rentals:
 
-            if each.get_days_rented() > 0:
+            if rental.get_days_rented() > 0:
 
-                thisAmount = self.amount_for(each)
+                thisAmount = self.amount_for(rental)
 
                 # add frequent renter points
                 frequentRenterPoints += 1
 
                 # add bonus for a two day new release rental
-                if each.get_movie().price_code == Movie.NEW_RELEASE and each.get_days_rented() > 1:
+                if rental.get_movie().price_code == Movie.NEW_RELEASE and rental.get_days_rented() > 1:
                     frequentRenterPoints += 1
 
                 # show figures for this rental
-                result += f" {each.get_movie().get_title()}: {str(thisAmount)}\n"
+                result += f" {rental.get_movie().get_title()}: {str(thisAmount)}\n"
                 totalAmount += thisAmount
 
         # add footer lines
