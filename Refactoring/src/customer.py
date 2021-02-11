@@ -9,32 +9,40 @@ class Customer:
     def add_rental(self, rental):
         self.__rentals.append(rental)
 
+    @staticmethod
+    def amount_for(each):
+        price_code = each.get_movie().price_code
+        days_rented = each.get_days_rented()
+        thisAmount = 0
+        if price_code == Movie.REGULAR:
+            thisAmount += 2
+            if days_rented > 2:
+                thisAmount += (days_rented - 2) * 1.5
+        if price_code == Movie.NEW_RELEASE:
+            thisAmount += days_rented * 3
+        if price_code == Movie.CHILDREN:
+            thisAmount += 1.5
+            if days_rented > 3:
+                thisAmount += (days_rented - 3) * 1.5
+
+        return thisAmount
+
     def get_statement(self):
 
         totalAmount = 0
         frequentRenterPoints = 0
-        result = f"Rental Record for { self.__name }\n"
+        result = f"Rental Record for {self.__name}\n"
         for each in self.__rentals:
-            price_code = each.get_movie().price_code
-            days_rented = each.get_days_rented()
-            thisAmount = 0
-            if days_rented > 0:
-                if price_code == Movie.REGULAR:
-                    thisAmount += 2
-                    if days_rented > 2:
-                        thisAmount += (days_rented - 2) * 1.5
-                if price_code == Movie.NEW_RELEASE:
-                    thisAmount += days_rented * 3
-                if price_code == Movie.CHILDREN:
-                    thisAmount += 1.5
-                    if days_rented > 3:
-                        thisAmount += (days_rented - 3) * 1.5
+
+            if each.get_days_rented() > 0:
+
+                thisAmount = self.amount_for(each)
 
                 # add frequent renter points
                 frequentRenterPoints += 1
 
                 # add bonus for a two day new release rental
-                if price_code == Movie.NEW_RELEASE and days_rented > 1:
+                if each.get_movie().price_code == Movie.NEW_RELEASE and each.get_days_rented() > 1:
                     frequentRenterPoints += 1
 
                 # show figures for this rental
