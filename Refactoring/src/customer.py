@@ -10,24 +10,17 @@ class Customer:
         self.__rentals.append(rental)
 
     def get_statement(self):
-
         totalAmount = 0
         frequentRenterPoints = 0
         result = f"Rental Record for {self.__name}\n"
         for rental in self.__rentals:
 
-            if rental.get_days_rented() > 0:
+            # add frequent renter points
+            frequentRenterPoints += rental.get_frequent_renter_points()
 
-                # add frequent renter points
-                frequentRenterPoints += 1
-
-                # add bonus for a two day new release rental
-                if rental.get_movie().price_code == Movie.NEW_RELEASE and rental.get_days_rented() > 1:
-                    frequentRenterPoints += 1
-
-                # show figures for this rental
-                result += f" {rental.get_movie().get_title()}: {str(rental.get_charge())}\n"
-                totalAmount += rental.get_charge()
+            # show figures for this rental
+            result += f" {rental.get_movie().get_title()}: {str(rental.get_charge())}\n"
+            totalAmount += rental.get_charge()
 
         # add footer lines
         result += f" Amount owed is {str(totalAmount)} \n"
