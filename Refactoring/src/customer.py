@@ -11,22 +11,8 @@ class Customer:
 
     @staticmethod
     def amount_for(rental):
-        price_code = rental.get_movie().price_code
-        days_rented = rental.get_days_rented()
-        thisAmount = 0
-        if price_code == Movie.REGULAR:
-            thisAmount += 2
-            if days_rented > 2:
-                thisAmount += (days_rented - 2) * 1.5
-        if price_code == Movie.NEW_RELEASE:
-            thisAmount += days_rented * 3
-        if price_code == Movie.CHILDREN:
-            thisAmount += 1.5
-            if days_rented > 3:
-                thisAmount += (days_rented - 3) * 1.5
-
-        return thisAmount
-
+        return rental.get_charge()
+        
     def get_statement(self):
 
         totalAmount = 0
