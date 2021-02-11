@@ -1,7 +1,7 @@
 class Movie:
     REGULAR = 0
     NEW_RELEASE = 1
-    CHILDRENS = 2
+    CHILDREN = 2
 
     def __init__(self, title, priceCode):
         self.__title = title

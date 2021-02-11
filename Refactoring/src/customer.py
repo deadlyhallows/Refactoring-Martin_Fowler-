@@ -25,7 +25,7 @@ class Customer:
                         thisAmount += (days_rented - 2) * 1.5
                 if price_code == Movie.NEW_RELEASE:
                     thisAmount += days_rented * 3
-                if price_code == Movie.CHILDRENS:
+                if price_code == Movie.CHILDREN:
                     thisAmount += 1.5
                     if days_rented > 3:
                         thisAmount += (days_rented - 3) * 1.5
