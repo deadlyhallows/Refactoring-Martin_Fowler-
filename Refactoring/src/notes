@@ -1,0 +1,24 @@
+* Pointers for Refactoring
+
+1. Add tests to the code wherever absent:
+    a. Make sure all tests are fully automatic and that they check their own results, use "assert"
+    b. A suite of tests is a powerful "bug detector" that decapitates the time it takes to find bugs.
+    c. Run your tests frequently. Localize tests whenever you compile—"every test at least every day".
+    d. When you get a bug report, start by writing a unit test that exposes the bug.
+    e. It is better to write and run incomplete tests than not to run complete tests.
+    f. Think of the "boundary conditions" under which things might go wrong and concentrate your tests there.
+    g. Don't let the fear that testing can't catch all bugs stop you from writing the tests that will catch most bugs.
+    h. Don't forget to "test that exceptions are raised" when things are expected to go wrong.
+
+2. Look for long methods which can be converted to small ones
+
+    a. start with extracting logical part from the long method
+    b. look for local variables, unchanged ones will be parameters to the extarcted method and the changing ones will
+       be local variables which wil be returned.
+    
+=======================================================================================================================
+
+* Pointers for OOP in Python
+
+1. class methods and variables
+2. access modifiers (public, protect, private)
