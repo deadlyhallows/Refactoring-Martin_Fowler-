@@ -18,8 +18,6 @@ class Customer:
 
             if rental.get_days_rented() > 0:
 
-                thisAmount = rental.get_charge()
-
                 # add frequent renter points
                 frequentRenterPoints += 1
 
@@ -28,8 +26,8 @@ class Customer:
                     frequentRenterPoints += 1
 
                 # show figures for this rental
-                result += f" {rental.get_movie().get_title()}: {str(thisAmount)}\n"
-                totalAmount += thisAmount
+                result += f" {rental.get_movie().get_title()}: {str(rental.get_charge())}\n"
+                totalAmount += rental.get_charge()
 
         # add footer lines
         result += f" Amount owed is {str(totalAmount)} \n"

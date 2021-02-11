@@ -1,6 +1,6 @@
 * Pointers for Refactoring
 
-1. Add tests to the code wherever absent:
+1. Add "tests" to the code wherever absent:
 
     a. Make sure all tests are fully automatic and that they check their own results, use "assert"
     b. A suite of tests is a powerful "bug detector" that decapitates the time it takes to find bugs.
@@ -11,17 +11,20 @@
     g. Don't let the fear that testing can't catch all bugs stop you from writing the tests that will catch most bugs.
     h. Don't forget to "test that exceptions are raised" when things are expected to go wrong.
 
-2. Look for long methods which can be converted to small ones
+2. Look for long methods which can be converted to small ones: "Extract Method"
 
     a. start with extracting logical part from the long method
     b. look for local variables, unchanged ones will be parameters to the extarcted method and the changing ones will
        be local variables which wil be returned.
 
-3. Rename the variables and functions in a way that it explains the purpose of the code, also add doc-strings wherever
+3. "Rename the variables and functions" in a way that it explains the purpose of the code, also add doc-strings wherever
    needed.
 
 4. Check if methods of all classes uses the data of the same class, and move the methods accordingly.
-   After this, change the references of old method.
+   After this, change the references of old method: "Move Method"
+
+5. "Replace "temp" variables with queries" if they are adding to the params used to call a function.
+
 =======================================================================================================================
 
 * Pointers for OOP in Python
