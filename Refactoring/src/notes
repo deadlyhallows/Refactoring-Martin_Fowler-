@@ -14,7 +14,7 @@
 2. Look for long methods which can be converted to small ones: "Extract Method"
 
     a. start with extracting logical part from the long method
-    b. look for local variables, unchanged ones will be parameters to the extarcted method and the changing ones will
+    b. look for local variables, unchanged ones will be parameters to the extracted method and the changing ones will
        be local variables which wil be returned.
 
 3. "Rename the variables and functions" in a way that it explains the purpose of the code, also add doc-strings wherever
@@ -24,6 +24,8 @@
    After this, change the references of old method: "Move Method"
 
 5. "Replace "temp" variables with queries" if they are adding to the params used to call a function.
+
+6. convert switch or if-else statements to separate classes using polymorphism (strategy pattern).
 
 =======================================================================================================================
 
