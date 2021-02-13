@@ -33,3 +33,23 @@
 
 1. class methods and variables
 2. access modifiers (public, protect, private)
+3. OOP n python: https://stackabuse.com/object-oriented-programming-in-python/
+4. @property: https://www.programiz.com/python-programming/property
+5. class_method:
+    * static, instance, class methods
+    * return cls(name, date.today().year - year)
+    * A class method is a method that is bound to the class and not the object of the class.
+    * They have the access to the state of the class as it takes a class parameter that points to the class and not
+      the object instance.
+    * It can modify a class state that would apply across all the instances of the class. For example, it can modify
+      a class variable that would be applicable to all the instances.
+6. interface:
+    * https://realpython.com/python-interface/
+    * It doesn’t require the class that’s implementing the interface to define all of the interface’s abstract methods.
+7. SOLID principles
+8. concurrency: https://realpython.com/python-concurrency/
+9. data structures
+10. prefetch
+11. super()
+12. creational design patterns (creational)
+13. inheritance vs composition: https://medium.com/better-programming/prefer-composition-over-inheritance-1602d5149ea1
